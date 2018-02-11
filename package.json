@@ -1,0 +1,27 @@
+{
+  "name": "constructor_hangman",
+  "version": "1.0.0",
+  "description": "a game of hangman in the console",
+  "main": "app.js",
+  "dependencies": {
+    "inquirer": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajmaravilla/Hangman-Constructor-Hangman.git"
+  },
+  "keywords": [
+    "game",
+    "hangman"
+  ],
+  "author": "JM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajmaravilla/Hangman-Constructor/issues"
+  },
+  "homepage": "https://github.com/ajmaravilla/Hangman-Constructor#readme"
+}

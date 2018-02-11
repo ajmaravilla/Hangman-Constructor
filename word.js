@@ -1,24 +1,40 @@
-// function to reveal userGuess if true or blank if false
+var letter = require("./letter.js");
 
-function letter(let) {
-    // takes in the letter
-    this.letter = let;
-    // initial guess is false
-    this.guessLetter = false;
-  }
-  
-  // function will change the guessLetter placeholder to either true or false
-  // which is display either _ or the letter
-  letter.prototype.reveal = function() {
-    if (this.guessLetter === false) {
-      return '_';
-    } else {
-      return this.letter;
+function word() {
+  this.guessLetter = false;
+  var currentWord = [];
+
+  // method to generate blanks in random word
+  this.wordBlankArr = function (wordArr) {
+    currentWord = [];
+    for (var i = 0; i < wordArr.length; i++) {
+      currentWord.push("_");
     }
-  }
-  
-  // var newLetter = new letter("this true and is working"); //TEST
-  // console.log(newLetter.reveal()); //TEST
-  
-  // exports either a _ or letter
-  module.exports = letter;
+    return currentWord;
+  };
+  // method to take guess letter and compare to random word, then return letter in word
+  this.letterInWord = function (let, wordArr) {
+    for (var i = 0; i < wordArr.length; i++) {
+      if (let === wordArr[i]) {
+        this.guessLetter = true;
+      }
+    }
+    if (this.guessLetter) {
+      for (var j = 0; j < wordArr.length; j++) {
+        if (let === wordArr[j]) {
+          currentWord[j] = let;
+        }
+      }
+    }
+    return currentWord;
+  };
+}
+
+/*** TESTING
+var newWord = new word();
+var arr = ["h", "a", "t"];
+console.log(newWord.wordBlankArr(arr));
+console.log(newWord.letterInWord("h", arr));
+***/
+
+module.exports = word;
