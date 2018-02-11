@@ -1,21 +1,20 @@
-//Hangman - Node
-//calling required packages and files
+// Hangman via Node - Parks Edition
+// calling required packages and files
 var word = require('./word.js');
-var randomWord = required('./wordBank.js');
+var randomWord = require('./wordBank.js');
 
 var inquirer = require('inquirer');
 
-console.log("===== LET'S PLAY HANGMAN! =====");
-console.log("= Topic: Commercial Aviation  =");
-console.log("===============================");
+console.log('****** READY TO PLAY HANGMAN? ******');
+console.log('*     Topic: Commercial Aviation   *');
+console.log('************************************');
 
 // Global variables
-//Test
-var numBlanks = 0; 
+var numBlanks = 0; // TEST
 var lettersInWord = [];
 // var wrongLetterArr = []; // push to wrong letter array
 var currentWord = [];
-var guessLeft = 10;
+var guessLeft = 9;
 
 // new constructor functions and instances
 var newRandWord = new randomWord();
@@ -28,7 +27,7 @@ function startGame() {
   // numBlanks = newRandWord.length; // TEST
 
   // Reset
-  guessLeft = 10;
+  guessLeft = 9;
   currentWord = [];
   wrongLetterArr = []; // push to wrong letter array
   newWord.guessLetter = false;
@@ -36,9 +35,9 @@ function startGame() {
   // Set up blank array for current random word
   currentWord = newWord.wordBlankArr(newRandWord);
 
-  // console.log(numBlanks); 
-  // console.log(currentWord.length); 
-  // console.log(newRandWord);
+  // console.log(numBlanks); // TEST
+  // console.log(currentWord.length); // TEST
+  // console.log(newRandWord); // TEST
 
   // Starting random word with blanks to console
   console.log(currentWord.join(' '));
@@ -102,3 +101,6 @@ ${currentWord.join(' ')}`);
     }
   });
 }
+
+// NICE TO HAVE LIST (to incorporate into next rev)
+  // need to write code for 'already guessed letters'
