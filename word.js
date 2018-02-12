@@ -4,7 +4,7 @@ function word() {
   this.guessLetter = false;
   var currentWord = [];
 
-  // method to generate blanks in random word
+  //method to make blanks for random word
   this.wordBlankArr = function (wordArr) {
     currentWord = [];
     for (var i = 0; i < wordArr.length; i++) {
@@ -12,7 +12,7 @@ function word() {
     }
     return currentWord;
   };
-  // method to take guess letter and compare to random word, then return letter in word
+  // method to compare user input to random word, then return letter in word
   this.letterInWord = function (let, wordArr) {
     for (var i = 0; i < wordArr.length; i++) {
       if (let === wordArr[i]) {
