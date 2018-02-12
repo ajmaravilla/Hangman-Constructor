@@ -86,7 +86,7 @@ function playGame(word) {
       if (currentWord.toString() === newRandWord.toString()) {
         console.log(`YOU GUESS THE WORD!!!
 ${currentWord.join(' ')} 
-\n****** NEW GAME *******
+\n****** NEW GAME or ctrl+c to exit *******
 `);
         //restart game
         startGame();
@@ -101,6 +101,3 @@ ${currentWord.join(' ')}`);
     }
   });
 }
-
-// NICE TO HAVE LIST (to incorporate into next rev)
-  // need to write code for 'already guessed letters'
